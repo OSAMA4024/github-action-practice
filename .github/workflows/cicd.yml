@@ -22,7 +22,7 @@ jobs:
       - name: Runing test cases
         run: echo " Runing test casesr"
   deploy:
-    needs: [code,bulid]
+    needs: [bulid, test]
     runs-on: ubuntu-latest
     steps:
       - name: Deploying on the machine
