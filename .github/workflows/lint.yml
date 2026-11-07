@@ -1,1 +1,13 @@
+name: Auto Linter
+on: 
+  push:
+    paths: "*py"
 
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: chackout the code
+        uses: actions/checkout@v7
+        
+    
