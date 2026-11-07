@@ -5,18 +5,18 @@ on:
   push:
     paths:
       - "**.py"
-      - ".github/workflows/**"
+     
 
 jobs:
-  code:
+  code-linting:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout the code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Linter
         run: pip install ruff
 
       - name: Run Linter
-        run: ruff check . --output-format=github
+        run: ruff check . 
