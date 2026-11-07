@@ -9,17 +9,20 @@ jobs:
       - name: Clone the code
         run: echo "Cloning the code"
   bulid:
+    needs: code
     runs-on: ubuntu-latest
     steps:
       - name: Bulid using Docker
         run: echo " Bulid using docker"
     
   test:
+    needs: bulid
     runs-on: ubuntu-latest
     steps:
       - name: Runing test cases
         run: echo " Runing test casesr"
   deploy:
+    needs: [code,bulid]
     runs-on: ubuntu-latest
     steps:
       - name: Deploying on the machine
